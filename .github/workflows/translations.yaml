@@ -29,7 +29,7 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: "3.11"
     - name: Check Python version
       run: python --version
     - name: Install dependencies
@@ -48,4 +48,4 @@ jobs:
         title: "[translation]: Update translations (${{ steps.date.outputs.date }})"
         labels: translation, ${{ matrix.branch }}
         branch: update-translations-to-${{ matrix.branch }}
-        token: ${{ secrets.ACTION_TOKEN }}
+        token: ${{ secrets.TRANSLATIONS_TOKEN }}
